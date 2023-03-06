@@ -1,17 +1,19 @@
 import { Request, Response } from 'express';
 import ProductService from '../services/ProductService';
 
-export default class ProductController {
+class ProductController {
   constructor(private productService = new ProductService()) {}
 
-  async create(req: Request, res: Response): Promise<Response> {
+  async createProduct(req: Request, res: Response): Promise<Response> {
     const { name, amount } = req.body;
-    const newProduct = await this.productService.create(name, amount);
+    const newProduct = await this.productService.createProduct(name, amount);
     return res.status(201).json(newProduct);
   }
 
-  async getAll(req: Request, res: Response): Promise<Response> {
-    const products = await this.productService.getAll();
+  async getAllProduct(req: Request, res: Response): Promise<Response> {
+    const products = await this.productService.getAllProduct();
     return res.status(200).json(products);
   }
 }
+
+export default ProductController;

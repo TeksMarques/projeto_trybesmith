@@ -6,8 +6,8 @@ import orderRouter from './routes/orderRoute';
 const app = express();
 
 app.use(express.json());
-app.use('/products', productsRoute);
-app.use('/users', userRouter);
-app.use('/orders', orderRouter);
+app.use('/', productsRoute);
+app.use('/', userRouter);
+app.use('/', orderRouter);
 
 export default app;

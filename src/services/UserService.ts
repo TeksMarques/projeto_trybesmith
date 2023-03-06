@@ -9,9 +9,9 @@ export default class UserService {
     this.userModel = new UserModel(connection);
   }
     
-  async create(username: string, vocation: string, level: number, password: string): Promise<
+  async createUser(username: string, vocation: string, level: number, password: string): Promise<
   IUser> {
-    const newUser = await this.userModel.create(username, vocation, level, password);
+    const newUser = await this.userModel.createUser(username, vocation, level, password);
     return newUser;
   }
 }

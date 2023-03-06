@@ -9,8 +9,8 @@ export default class OrderService {
     this.orderModel = new OrderModel(connection);
   }
 
-  async getAll(): Promise<IOrder[]> {
-    const orders = await this.orderModel.getAll();
+  async getAllOrder(): Promise<IOrder[]> {
+    const orders = await this.orderModel.getAllOrder();
     return orders;
   }
 }

@@ -8,7 +8,7 @@ export default class OrderModel {
     this.connection = connection;
   }
 
-  async getAll(): Promise<IOrder[]> {
+  async getAllOrder(): Promise<IOrder[]> {
     const [rows] = await this.connection.execute<IOrder[] & RowDataPacket[]>(
       `SELECT  orders.id, orders.user_id as userId, 
       JSON_ARRAYAGG(products.id) as productsIds 
